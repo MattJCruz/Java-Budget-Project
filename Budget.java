@@ -12,6 +12,7 @@ public class Budget {
 	static double taxRate = 0.0765; //Make tax rate final constant. Maybe. IDK.
 	static double rent;
 	static double utilities;
+	static double expenses;
 	ArrayList<Double> expenseNum;
 	ArrayList<String> expenseName;
 

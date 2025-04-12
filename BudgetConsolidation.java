@@ -12,7 +12,6 @@ public class BudgetConsolidation {
 	static double taxRate = 0.0765;
 	static double rent;
 	static double utilities;
-	static double expenses;
 
 
 	//static double expenses(){
