@@ -3,18 +3,19 @@ import java.util.ArrayList;
 
 
 public class Budget {
-
-	static double payRate;
 	static double hours;
-	static double income = 1;
+	static double grossIncome;
+	static double taxedIncome;
+	static double netIncome;
 
 	static double tax;
-	static double taxRate = 0.0765; //Make tax rate final constant. Maybe. IDK.
 	static double rent;
 	static double utilities;
 	static double expenses;
-	ArrayList<Double> expenseNum;
-	ArrayList<String> expenseName;
+
+	//FINAL constant Amts. most likely.
+	static double payRate = 13;
+	static double taxRate = 0.0765;
 
 	public static void getExpenses() {
 		String cont = "y";
@@ -28,19 +29,17 @@ public class Budget {
 		}
 	}
 
-
-
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
-		while (income > 0) {
+		do {
 //Data Collection			
-			System.out.print("Enter hourly payrate: ");
-			payRate = kb.nextDouble();
+			//System.out.print("Enter hourly payrate: ");
+			//payRate = kb.nextDouble();
 			System.out.println("Enter hours worked: ");
 			hours = kb.nextDouble();
-			System.out.print("Enter a rent price:");
-			rent = kb.nextDouble();
+			//System.out.print("Enter a rent price:");
+			//rent = kb.nextDouble();
 
 //Calculate hours worked. If hours worked is over 40, then subtract 40 from hours worked snd multiply it by time&1/2.
 			income += payRate * hours;
@@ -59,8 +58,5 @@ public class Budget {
 			System.out.printf("%,.2f\n", (income - tax));
 			System.out.print("Yearly, this is: ");
 			System.out.printf("%,.2f\n", (income - tax) * 52);
-		}
+		} while (income > 0);
 	}
-}
-//yearly income calculated in one loop, expenses another.
-//to begin, pedefined costs such as rent and ut

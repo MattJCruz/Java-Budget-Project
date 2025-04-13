@@ -1,27 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
-public class BudgetConsolidation {
-
-	static double payRate;
-	static double hours;
-	static double income = 1;
-
-	static double tax;
-	static double taxRate = 0.0765;
-	static double rent;
-	static double utilities;
-
-
-	//static double expenses(){
-
-	//}
-//Make tax rate final constant.
-
-
-
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
 		while (income > 0) {
