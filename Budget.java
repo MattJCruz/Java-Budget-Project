@@ -17,23 +17,24 @@ public class Budget {
 	static double payRate = 13;
 	static double taxRate = 0.0765;
 
-	public static void getExpenses() {
+	/*public static void getExpenses() {
 		String cont = "y";
 		Scanner exp = new Scanner(System.in);
-		while (cont.equals("y")||cont.equals("Y")){
+		while (cont.equals("y") || cont.equals("Y")) {
 			System.out.print("Enter an expense, i.e. a bill or weekly grocery trip: ");
 			expenseNum.add(exp.nextDouble());
 			System.out.print("Enter a name for this expense: ");
 			expenseName.add(exp.nextLine());
 			System.out.print("Add another expense? y/n");
+			cont = exp.next();
 		}
-	}
+	}*/
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
 		do {
-//Data Collection			
+//Data Collection
 			//System.out.print("Enter hourly payrate: ");
 			//payRate = kb.nextDouble();
 			System.out.println("Enter hours worked: ");
@@ -42,21 +43,25 @@ public class Budget {
 			//rent = kb.nextDouble();
 
 //Calculate hours worked. If hours worked is over 40, then subtract 40 from hours worked snd multiply it by time&1/2.
-			income += payRate * hours;
+			grossIncome += payRate * hours;
 			if (hours > 40) {
-				income = ((hours - 40) * (payRate * 1.5) + (payRate * 40));
+				grossIncome = ((hours - 40) * (payRate * 1.5) + (payRate * 40));
 			} else {
-				income = payRate * hours;
+				grossIncome = payRate * hours;
 			}
-			tax = income * taxRate;
+			tax = grossIncome * taxRate;
 
 			System.out.print("Your gross weekly income is: ");
-			System.out.printf("%,.2f\n", income);
+			System.out.printf("%,.2f\n", grossIncome);
 			System.out.print("Yearly, this is: ");
-			System.out.printf("%,.2f\n", (income * 52));
+			System.out.printf("%,.2f\n", (grossIncome * 52));
 			System.out.println("Your net weekly income is: ");
-			System.out.printf("%,.2f\n", (income - tax));
+			System.out.printf("%,.2f\n", (grossIncome - tax));
 			System.out.print("Yearly, this is: ");
-			System.out.printf("%,.2f\n", (income - tax) * 52);
-		} while (income > 0);
+			System.out.printf("%,.2f\n", (grossIncome - tax) * 52);
+			System.out.println("Enter a new income if you'd like. Otherwise, exit with \"o\".");
+		} while (payRate > 0);
+
+		String randomTex = "YOu guys can leave, now.";4
 	}
+}

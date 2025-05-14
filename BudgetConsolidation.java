@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
+public class BudgetConsolidation{
+	/*
 public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
@@ -33,6 +34,7 @@ public static void main(String[] args) {
 			System.out.printf("%,.2f\n", (income - tax) * 52);
 		}
 	}
+	*/
 }
 //yearly income calculated in one loop, expenses another.
 //to begin, pedefined costs such as rent and ut
